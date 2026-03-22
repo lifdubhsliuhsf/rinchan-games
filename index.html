@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rin-chan's Game Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 20px;
+  }
+  .container { max-width: 800px; margin: 0 auto; text-align: center; }
+  h1 { font-size: clamp(28px, 6vw, 48px); color: #FF6B6B; margin: 20px 0 8px; }
+  .subtitle { font-size: clamp(14px, 3vw, 20px); color: rgba(255,255,255,0.6); margin-bottom: 40px; }
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 10px; }
+  .game-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 30px 24px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s, background 0.2s;
+    display: block;
+  }
+  .game-card:hover, .game-card:active {
+    transform: scale(1.03);
+    background: rgba(255,255,255,0.14);
+  }
+  .game-icon { font-size: 64px; margin-bottom: 16px; }
+  .game-title { font-size: clamp(20px, 4vw, 28px); font-weight: 700; margin-bottom: 8px; }
+  .game-desc { font-size: clamp(14px, 2.5vw, 16px); color: rgba(255,255,255,0.65); line-height: 1.5; }
+  .tag {
+    display: inline-block;
+    background: rgba(255,107,107,0.2);
+    color: #FF6B6B;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+  .footer {
+    margin-top: 60px;
+    padding: 20px;
+    color: rgba(255,255,255,0.35);
+    font-size: 14px;
+  }
+  .coming-soon {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .coming-soon .tag {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Rin-chan's Game Room</h1>
+  <p class="subtitle">Fun games for everyone — especially our wonderful seniors!</p>
+
+  <div class="games">
+    <a href="paw-beat.html" class="game-card">
+      <div class="game-icon">🎵</div>
+      <div class="game-title">Paw Beat</div>
+      <div class="game-desc">Tap along to classic melodies! Match the rhythm with Rin-chan's paws and scratches.</div>
+      <span class="tag">Play Now</span>
+    </a>
+
+    <div class="game-card coming-soon">
+      <div class="game-icon">🃏</div>
+      <div class="game-title">Memory Match</div>
+      <div class="game-desc">Flip cards and find pairs. A gentle memory workout that's actually fun!</div>
+      <span class="tag">Coming Soon</span>
+    </div>
+
+    <div class="game-card coming-soon">
+      <div class="game-icon">🎯</div>
+      <div class="game-title">Trivia Time</div>
+      <div class="game-desc">Test your knowledge with fun group trivia — perfect for game nights!</div>
+      <span class="tag">Coming Soon</span>
+    </div>
+
+    <div class="game-card coming-soon">
+      <div class="game-icon">🎰</div>
+      <div class="game-title">Bingo Bash</div>
+      <div class="game-desc">Digital bingo with auto-calling. Just play on the big screen and enjoy!</div>
+      <span class="tag">Coming Soon</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    Made with love by Rin-chan's Game Room<br>
+    Games designed for joy — brain benefits are a bonus!
+  </div>
+</div>
+</body>
+</html>
