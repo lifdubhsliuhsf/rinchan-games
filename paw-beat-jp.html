@@ -435,18 +435,21 @@ function generateBeatMap(songIdx) {
   const mel = computeEvents(melody, bpm, 0);
 
   // Loop melody and create beat map
-  let eighthCount = 0;
+  // Alternate don/ka by note index (every 2-3 notes switch)
   for (let offset = startOffset; offset < fillDur; offset += mel.totalDur) {
     let t = 0;
-    let ec = 0;
+    let noteIdx = 0;
     for (const [freq, dur] of melody) {
       if (freq > 0 && t + offset < fillDur) {
-        // Downbeats (quarter note positions) = don, upbeats = ka
-        const type = ec % 2 === 0 ? 'don' : 'ka';
+        // Pattern: don don ka don don ka don ka don don ka ...
+        // Gives roughly 60% don, 40% ka — feels natural
+        const patLen = 5;
+        const pat = noteIdx % patLen;
+        const type = (pat === 2 || pat === 4) ? 'ka' : 'don';
         notes.push({ time: t + offset, type });
+        noteIdx++;
       }
       t += dur * eighthDur;
-      ec += dur;
     }
   }
   return notes;
